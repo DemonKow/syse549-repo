@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding=\"utf-8\"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_governance.xsd">
+	<domain_access_rules>
+#foreach ($element in $elements)
+#foreach ($stype in $element.appliedStereotype)
+#if ($stype.name == "DDS_Domain")
+		<!-- Domain policy for $element.humanName -->
+		<domain_rule>
+			<domains>
+#foreach ($tag in $element.tags)
+#foreach ($entry in $tag)
+#if ($entry.name == "Domain ID")		
+				<id>$entry.value</id>
+			</domains>
+#end## ENDIF DomainID
+#if ($entry.name == "Allow Unauthenticated Participants")
+			<allow_unauthenticated_participants>$entry.value.text</allow_unauthenticated_participants>
+#end## ENDIF Allow Unauthenticated Participants
+#if ($entry.name == "Discovery Protection Kind")
+			<discovery_protection_kind>$entry.value.text</discovery_protection_kind>
+#end
+#if ($entry.name == "Enable Join Access Control")
+			<enable_join_access_control>$entry.value.text</enable_join_access_control>
+#end
+#if ($entry.name == "Liveliness Protection Kind")
+			<liveliness_protection_kind>$entry.value.text</liveliness_protection_kind>
+#end
+#if ($entry.name == "RTPS Protection Kind")	
+			<rtps_protection_kind>$entry.value.text</rtps_protection_kind>
+#end##ENDIF RTPS Protection Kind
+#end##ENDFOREACH $entry in $tag
+#end##ENDFOREACH $tag in $element.tags
+#foreach ($oE in $element.ownedElement)
+#foreach($oEST in $oE.appliedStereotype)
+#if($oEST.name=="DDSPort")
+			<topic_access_rules>
+#foreach($provided in $oE.provided)
+#foreach($rec in $provided.ownedReception)
+				<!-- Security settings for topic $rec.name -->
+				<topic_rule>
+					<topic_expression>$rec.name</topic_expression>
+#set ($thisSignal = $rec.signal)
+#foreach ($signalTag in $thisSignal.ownedElement)
+#if($signalTag.tagDefinition.name == "Enable Discovery Protection")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_discovery_protection>$thisLiteral.text</enable_discovery_protection>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE DISCOVERY PROTECTION
+#if($signalTag.tagDefinition.name == "Enable Liveliness Protection")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_liveliness_protection>$thisLiteral.text</enable_liveliness_protection>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE LIVELINESS PROTECTION
+#if($signalTag.tagDefinition.name == "Enable Read Access Control")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_read_access_control>$thisLiteral.text</enable_read_access_control>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE READ ACCESS CONTROL
+#if($signalTag.tagDefinition.name == "Enable Write Access Control")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_write_access_control>$thisLiteral.text</enable_write_access_control>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE WRITE ACCESS CONTROL
+#if($signalTag.tagDefinition.name == "Data Protection Kind")
+#foreach($thisLiteral in $signalTag.value)
+					<data_protection_kind>$thisLiteral.text</data_protection_kind>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF DATA PROTECTION KIND
+#if($signalTag.tagDefinition.name == "Metadata Protection Kind")
+#foreach($thisLiteral in $signalTag.value)
+					<metadata_protection_kind>$thisLiteral.text</metadata_protection_kind>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF METADATA PROTECTION KIND
+#end##FOREACH provided
+				</topic_rule>
+#end##FOREACH provided interfaces receptions
+#end##FOREACH provided interfaces
+#foreach($required in $oE.required)
+#foreach($rec in $required.ownedReception)
+				<!-- Security settings for topic $rec.name -->
+				<topic_rule>
+					<topic_expression>$rec.name</topic_expression>
+#set ($thisSignal = $rec.signal)
+#foreach ($signalTag in $thisSignal.ownedElement)
+#if($signalTag.tagDefinition.name == "Enable Discovery Protection")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_discovery_protection>$thisLiteral.text</enable_discovery_protection>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE DISCOVERY PROTECTION
+#if($signalTag.tagDefinition.name == "Enable Liveliness Protection")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_liveliness_protection>$thisLiteral.text</enable_liveliness_protection>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE LIVELINESS PROTECTION
+#if($signalTag.tagDefinition.name == "Enable Read Access Control")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_read_access_control>$thisLiteral.text</enable_read_access_control>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE READ ACCESS CONTROL
+#if($signalTag.tagDefinition.name == "Enable Write Access Control")
+#foreach($thisLiteral in $signalTag.value)
+					<enable_write_access_control>$thisLiteral.text</enable_write_access_control>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF ENABLE WRITE ACCESS CONTROL
+#if($signalTag.tagDefinition.name == "Data Protection Kind")
+#foreach($thisLiteral in $signalTag.value)
+					<data_protection_kind>$thisLiteral.text</data_protection_kind>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF DATA PROTECTION KIND
+#if($signalTag.tagDefinition.name == "Metadata Protection Kind")
+#foreach($thisLiteral in $signalTag.value)
+					<metadata_protection_kind>$thisLiteral.text</metadata_protection_kind>
+#end##FOREACH ITERATE ENUM
+#end##ENDIF METADATA PROTECTION KIND
+#end##FOREACH provided
+				</topic_rule>
+#end##FOREACH provided interfaces receptions
+#end##FOREACH provided interfaces
+#foreach($required in $oE.required)
+#foreach($rec in $required.ownedReception)
+#end##FOREACH required interfaces receptions
+#end##FOREACH required interfaces
+#end##ENDIF DDSPort
+#end##ENDFOREACH oEST in Stereotypes
+#end##ENDFOREACH oE in owned Elements
+			</topic_access_rules>
+		</domain_rule>
+#end##ENDIF is DDS_Domain
+#end##ENDFOREACH STEREOTYPES Iteration
+#end##ENDFOREACH Elements Iteration
+	</domain_access_rules>
+</dds>

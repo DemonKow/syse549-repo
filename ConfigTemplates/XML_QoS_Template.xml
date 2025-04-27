@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+	<Domain id="any">
+		<General>
+			<Interfaces>
+				<NetworkInterfaceAddress autodetermine="true" priority="default" multicast="default">wifi0</NetworkInterfaceAddress>
+			</Interfaces>
+			<AllowMulticast>default</AllowMulticast>
+			<MaxMessageSize>65500B</MaxMessageSize>
+		</General>
+		<Tracing>
+			<Verbosity>config</Verbosity>
+			<!-- TODO: Figure out how to keep the report wizard from pulling in environment variables -->
+			<OutputFile>
+				"${HOME}"/dds/log/cdds.log."${CYCLONEDDS_PID}"
+			</OutputFile>
+			</Tracing>
+	</Domain>
+	
+#foreach ($element in $elements)
+#foreach ($stype in $element.appliedStereotype)
+#if ($stype.name == "DDS_Domain")
+	<Domain id=$element.humanName>
+#foreach ($tag in $element.tags)
+#foreach ($entry in $tag)
+#if ($entry.name == "Topic Access Rules")		
+		<TOPIC_ACCESS_RULES>$entry.value</TOPIC_ACCESS_RULES>	
+#end
+#if ($entry.name == "Topic Expression")		
+		<TOPIC_EXPRESSION>$entry.value</TOPIC_EXPRESSION>	
+#end
+#end
+#end
+	</Domain>
+#end
+
+#if ($stype.name == "Topic")
+	<topic profile_name=$element.humanName>
+#foreach ($tag in $element.tags)
+#foreach ($entry in $tag)
+#if ($entry.name == "Topic Access Rules")		
+		<TOPIC_ACCESS_RULES>$entry.value</TOPIC_ACCESS_RULES>	
+#end
+#if ($entry.name == "Topic Expression")		
+		<TOPIC_EXPRESSION>$entry.value</TOPIC_EXPRESSION>	
+#end
+#end
+#end
+	</Domain>
+#end
+
+#end
+#end
+
+</CycloneDDS>
