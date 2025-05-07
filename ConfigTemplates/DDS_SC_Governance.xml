@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding=\"utf-8\"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_governance.xsd">
+	<domain_access_rules>
+		<!-- Domain policy for Block External Facing DDS Domain -->
+		<domain_rule>
+			<domains>
+				<id>2</id>
+			</domains>
+			<discovery_protection_kind>ENCRYPT_WITH_ORIGIN_AUTHENTICATION</discovery_protection_kind>
+			<enable_join_access_control>TRUE</enable_join_access_control>
+			<allow_unauthenticated_participants>FALSE</allow_unauthenticated_participants>
+			<rtps_protection_kind>ENCRYPT_WITH_ORIGIN_AUTHENTICATION</rtps_protection_kind>
+			<liveliness_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</liveliness_protection_kind>
+			<topic_access_rules>
+				<!-- Security settings for topic Proximity_Data -->
+				<topic_rule>
+					<topic_expression>Proximity_Data</topic_expression>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<metadata_protection_kind>ENCRYPT_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+				</topic_rule>
+			</topic_access_rules>
+		</domain_rule>
+		<!-- Domain policy for Block Safety Critical DDS Domain -->
+		<domain_rule>
+			<domains>
+				<id>1</id>
+			</domains>
+			<discovery_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</discovery_protection_kind>
+			<enable_join_access_control>TRUE</enable_join_access_control>
+			<allow_unauthenticated_participants>FALSE</allow_unauthenticated_participants>
+			<rtps_protection_kind>ENCRYPT_WITH_ORIGIN_AUTHENTICATION</rtps_protection_kind>
+			<liveliness_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</liveliness_protection_kind>
+			<topic_access_rules>
+				<!-- Security settings for topic Driveline_Data -->
+				<topic_rule>
+					<topic_expression>Driveline_Data</topic_expression>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<metadata_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+				</topic_rule>
+				<!-- Security settings for topic Proximity_Data -->
+				<topic_rule>
+					<topic_expression>Proximity_Data</topic_expression>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<metadata_protection_kind>ENCRYPT_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+				</topic_rule>
+				<!-- Security settings for topic Powertrain_Feedback -->
+				<topic_rule>
+					<topic_expression>Powertrain_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Driveline_Data -->
+				<topic_rule>
+					<topic_expression>Driveline_Data</topic_expression>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<metadata_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Operator_Control -->
+				<topic_rule>
+					<topic_expression>Chassis_Operator_Control</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Driveline_Data -->
+				<topic_rule>
+					<topic_expression>Driveline_Data</topic_expression>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<metadata_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Operator_Control -->
+				<topic_rule>
+					<topic_expression>Chassis_Operator_Control</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Steering_and_Wheel_Positioning -->
+				<topic_rule>
+					<topic_expression>Steering_and_Wheel_Positioning</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Suspension_Data -->
+				<topic_rule>
+					<topic_expression>Suspension_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Steering_and_Wheel_Positioning -->
+				<topic_rule>
+					<topic_expression>Steering_and_Wheel_Positioning</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Operator_Control -->
+				<topic_rule>
+					<topic_expression>Chassis_Operator_Control</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Speed_Acceleration_Data -->
+				<topic_rule>
+					<topic_expression>Speed_Acceleration_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Steering_and_Wheel_Positioning -->
+				<topic_rule>
+					<topic_expression>Steering_and_Wheel_Positioning</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Operator_Control -->
+				<topic_rule>
+					<topic_expression>Chassis_Operator_Control</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Body_Status -->
+				<topic_rule>
+					<topic_expression>Body_Status</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Suspension_Data -->
+				<topic_rule>
+					<topic_expression>Suspension_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Operator_Control -->
+				<topic_rule>
+					<topic_expression>Chassis_Operator_Control</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Driveline_Data -->
+				<topic_rule>
+					<topic_expression>Driveline_Data</topic_expression>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<metadata_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Body_Status -->
+				<topic_rule>
+					<topic_expression>Body_Status</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Operator_Control -->
+				<topic_rule>
+					<topic_expression>Chassis_Operator_Control</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Suspension_Data -->
+				<topic_rule>
+					<topic_expression>Suspension_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Acceleration_Commands -->
+				<topic_rule>
+					<topic_expression>Acceleration_Commands</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Crash_Prediction_and_Env_Info -->
+				<topic_rule>
+					<topic_expression>Crash_Prediction_and_Env_Info</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic EPB_Application -->
+				<topic_rule>
+					<topic_expression>EPB_Application</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Target_Acceleration -->
+				<topic_rule>
+					<topic_expression>Target_Acceleration</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Contact_Detection_Data -->
+				<topic_rule>
+					<topic_expression>Contact_Detection_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Powertrain_Feedback -->
+				<topic_rule>
+					<topic_expression>Powertrain_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Body_Status_Data -->
+				<topic_rule>
+					<topic_expression>Body_Status_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Driveline_Data -->
+				<topic_rule>
+					<topic_expression>Driveline_Data</topic_expression>
+					<data_protection_kind>ENCRYPT</data_protection_kind>
+					<enable_write_access_control>TRUE</enable_write_access_control>
+					<enable_discovery_protection>TRUE</enable_discovery_protection>
+					<metadata_protection_kind>SIGN_WITH_ORIGIN_AUTHENTICATION</metadata_protection_kind>
+					<enable_liveliness_protection>TRUE</enable_liveliness_protection>
+					<enable_read_access_control>TRUE</enable_read_access_control>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Torque_Management -->
+				<topic_rule>
+					<topic_expression>Torque_Management</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Steering_and_Wheel_Positioning -->
+				<topic_rule>
+					<topic_expression>Steering_and_Wheel_Positioning</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Chassis_Display_Data -->
+				<topic_rule>
+					<topic_expression>Chassis_Display_Data</topic_expression>
+				</topic_rule>
+				<!-- Security settings for topic Braking_Application_and_Feedback -->
+				<topic_rule>
+					<topic_expression>Braking_Application_and_Feedback</topic_expression>
+				</topic_rule>
+			</topic_access_rules>
+		</domain_rule>
+	</domain_access_rules>
+</dds>

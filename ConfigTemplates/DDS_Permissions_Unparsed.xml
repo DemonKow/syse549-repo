@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Vehicle Stabilizing Control">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Chassis_Display_Data</topic>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Torque_Management</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Chassis_Operator_Control</topic>
+                        <topic>Body_Status</topic>
+                        <topic>Suspension_Data</topic>
+                        <topic>Torque_Management</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Steering Driver Assistance System">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Chassis_Operator_Control</topic>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Torque_Management</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Steering_and_Wheel_Positioning</topic>
+                        <topic>Chassis_Display_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Chassis Sensors">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Chassis_Display_Data</topic>
+                        <topic>Contact_Detection_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Steering">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Steering_and_Wheel_Positioning</topic>
+                        <topic>Chassis_Display_Data</topic>
+                        <topic>Braking_Application_and_Feedback</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Chassis_Operator_Control</topic>
+                        <topic>Steering_and_Wheel_Positioning</topic>
+                        <topic>Torque_Management</topic>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Suspension_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Vehicle Longitudinal Control">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Powertrain_Feedback</topic>
+                        <topic>Torque_Management</topic>
+                        <topic>Body_Status_Data</topic>
+                        <topic>Chassis_Display_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Chassis_Operator_Control</topic>
+                        <topic>Speed_Acceleration_Data</topic>
+                        <topic>Torque_Management</topic>
+                        <topic>Steering_and_Wheel_Positioning</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Suspension">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Chassis_Display_Data</topic>
+                        <topic>Suspension_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Chassis_Operator_Control</topic>
+                        <topic>Driveline_Data</topic>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Body_Status</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Electronic_Stability_Control">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Driveline_Data</topic>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Chassis_Display_Data</topic>
+                        <topic>Torque_Management</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Driveline_Data</topic>
+                        <topic>Chassis_Operator_Control</topic>
+                        <topic>Torque_Management</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Roll Stability Control">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Braking_Application_and_Feedback</topic>
+                        <topic>Chassis_Display_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Driveline_Data</topic>
+                        <topic>Torque_Management</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Surroundings_Sensors">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>2</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Proximity_Data</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+    <permissions>
+        <grant name="Adaptive_Cruise_Control">
+            <subject_name>CN=CHAM500 cert,O=Internet Widgits Pty Ltd,ST=Some-State,C=NL</subject_name>
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2015-09-15T01:00:00</not_before>
+                <not_after>2115-09-15T01:00:00</not_after>
+            </validity>
+			<topic_access_rules>
+            <allow_rule>
+				<!-- Domain ranges not supported at this time to enforce explicit domain participation -->
+                <domains>
+					<id>1</id>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>Acceleration_Commands</topic>
+                        <topic>Chassis_Display_Data</topic>
+                        <topic>Crash_Prediction_and_Env_Info</topic>
+                        <topic>EPB_Application</topic>
+                        <topic>Target_Acceleration</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>Driveline_Data</topic>
+                        <topic>Proximity_Data</topic>
+                        <topic>Powertrain_Feedback</topic>
+                    </topics>
+					<partitions>
+						<partition>*</partition>
+					</partitions>					
+                </subscribe>
+            </allow_rule>
+            <default>DENY</default>
+        </grant>
+    </permissions>
+</dds>
+<!--Delimiter for Script-->
